@@ -13,11 +13,11 @@ int main()
 	std::cout << "how many car you have? ";
 	std::cin >> input;
 
-	Car * car = new Car[input];
+	Car* car = new Car[input];
 
 	for (int i = 0; i < input; i++) {
 
-		std::cout << "자동차 #"<<  i + 1 << " : " << std::endl;
+		std::cout << "자동차 #" << i + 1 << " : " << std::endl;
 		std::cout << "제작업체 : ";
 		std::cin >> car[i].by_made;
 		std::cout << "제작년도 : ";
@@ -30,5 +30,7 @@ int main()
 
 		std::cout << car[i].when_made << "형 " << car[i].by_made << std::endl;
 	}
+
+	delete[] car;
 
 }
