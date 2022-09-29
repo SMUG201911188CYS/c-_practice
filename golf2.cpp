@@ -3,22 +3,35 @@
 #include <cstring>
 
 
+
+Golf::Golf() {
+
+	strcpy_s(Golf::fullname, "None");
+	Golf::hc = 0;
+
+}
 int Golf::setGolf() {
 
-	std::cout << "input fullname : ";
-	std::cin.getline(Golf::fullname, 40);
+	Golf a;
 
-	if (Golf::fullname[0] == '\0')
+	std::cout << "input fullname : ";
+	std::cin.getline(a.fullname, 40);
+
+	if (a.fullname[0] == '\0')
 		return 0;
 
 	std::cout << "input handicap : ";
-	std::cin >> Golf::hc;
+	std::cin >> a.hc;
 	std::cin.ignore();
+
+	*this = a;
+
+
 	return 1;
 
 }
 
-void Golf::handicap(int hc) {
+void Golf::setHandicap(int hc) {
 
 	Golf::hc = hc;
 
@@ -27,5 +40,5 @@ void Golf::handicap(int hc) {
 void Golf::showgolf() {
 
 	std::cout << "Full name : " << Golf::fullname << std::endl;
-	std::cout << "Handicap : " << Golf::handicap << std::endl;
+	std::cout << "Handicap : " << Golf::hc << std::endl;
 }
